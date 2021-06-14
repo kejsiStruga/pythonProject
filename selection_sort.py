@@ -8,7 +8,7 @@ def print_array(arr):
 def selection_sort(arr):
     arr_len = len(arr)
     # Traverse through all array elements
-    for i in range(arr_len - 1):
+    for i in range(0, arr_len - 1):
         # Find the min element in remaining unsorted array
         min_idx = i
         for j in range(i + 1, arr_len):
