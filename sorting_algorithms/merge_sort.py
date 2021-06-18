@@ -1,6 +1,9 @@
 import numpy as np
 
 
+# merge sort -> not an in-place algorithm => it has
+# O(n) -> space complexity
+
 # the function responsible for the combine step
 # the simplest case is comparing elements from both arrrays and
 # then according to which is smaller we place it on the parent array
