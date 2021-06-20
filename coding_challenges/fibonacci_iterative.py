@@ -15,4 +15,4 @@ def fibonacci(n):
 
 
 if __name__ == '__main__':
-    print(fibonacci(10))
+    print(fibonacci(40))
