@@ -1,3 +1,6 @@
+"""FIFO -> First In First Out"""
+
+
 class Queue(object):
     def __init__(self):
         self.items = []
