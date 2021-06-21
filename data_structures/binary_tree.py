@@ -1,3 +1,29 @@
+class Queue(object):
+    def __init__(self):
+        self.items = []
+
+    def enqueue(self, item):
+        """Function for inserting elements into the queue"""
+        self.items.insert(0, item)
+
+    def dequeue(self):
+        if not self.is_empty():
+            return self.items.pop()
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1].value
+
+    def __len__(self):
+        return self.size()
+
+    def size(self):
+        return len(self.items)
+
+
 class Node(object):
     def __init__(self, value):
         self.value = value
@@ -16,6 +42,10 @@ class BinaryTree(object):
             return self.in_order_traversal(self.root, "")
         elif traversal_type == "postorder":
             return self.post_order_traversal(self.root, "")
+        elif traversal_type == "levelorder":
+            # as the level order traversal is done in an iterative fashion => we don't need
+            # to pass the empty string as param
+            return self.level_order_traversal(self.root)
         else:
             print("Traversal type " + str(traversal_type) + " is not supported")
             return False
@@ -44,6 +74,28 @@ class BinaryTree(object):
             traversal_str += (str(subtree.value) + "-")
         return traversal_str
 
+    def level_order_traversal(self, start_node):
+        if start_node is None:
+            return
+
+        queue = Queue()
+        queue.enqueue(start_node)
+
+        traversal_str = ""
+
+        while len(queue) > 0:
+            traversal_str += str(queue.peek()) + "-"
+            # next we take this node out of the queue and check for the children of that node
+            # for that we use the dequeue() function because that will return the element
+            node = queue.dequeue()
+
+            if node.left:
+                queue.enqueue(node.left)
+            if node.right:
+                queue.enqueue(node.right)
+
+        return traversal_str
+
 
 if __name__ == '__main__':
     #            1
@@ -67,3 +119,4 @@ if __name__ == '__main__':
     print("PreOrder Traversal: " + binary_tree.print_tree("preorder"))
     print("InOder Traversal: " + binary_tree.print_tree("inorder"))
     print("PostOder Traversal: " + binary_tree.print_tree("postorder"))
+    print("LevelOrder Traversal: " + binary_tree.print_tree("levelorder"))
