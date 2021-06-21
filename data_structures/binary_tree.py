@@ -1,27 +1,4 @@
-class Queue(object):
-    def __init__(self):
-        self.items = []
-
-    def enqueue(self, item):
-        """Function for inserting elements into the queue"""
-        self.items.insert(0, item)
-
-    def dequeue(self):
-        if not self.is_empty():
-            return self.items.pop()
-
-    def is_empty(self):
-        return len(self.items) == 0
-
-    def peek(self):
-        if not self.is_empty():
-            return self.items[-1].value
-
-    def __len__(self):
-        return self.size()
-
-    def size(self):
-        return len(self.items)
+from my_queue import Queue
 
 
 class Node(object):
@@ -78,21 +55,21 @@ class BinaryTree(object):
         if start_node is None:
             return
 
-        queue = Queue()
-        queue.enqueue(start_node)
+        queue_ds = Queue()
+        queue_ds.enqueue(start_node)
 
         traversal_str = ""
 
-        while len(queue) > 0:
-            traversal_str += str(queue.peek()) + "-"
+        while len(queue_ds) > 0:
+            traversal_str += str(queue_ds.peek()) + "-"
             # next we take this node out of the queue and check for the children of that node
             # for that we use the dequeue() function because that will return the element
-            node = queue.dequeue()
+            node = queue_ds.dequeue()
 
             if node.left:
-                queue.enqueue(node.left)
+                queue_ds.enqueue(node.left)
             if node.right:
-                queue.enqueue(node.right)
+                queue_ds.enqueue(node.right)
 
         return traversal_str
 
