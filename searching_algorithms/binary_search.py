@@ -25,6 +25,6 @@ def binary_search(arr, x, start, end):
 
 
 if __name__ == "__main__":
-    array = [1, 2, 5, 6, 0]
+    array = [1, 2, 5, 6]
     print(binary_search(array, 5, 0, len(array)-1))
 
