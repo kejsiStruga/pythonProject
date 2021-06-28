@@ -1,5 +1,5 @@
 """
-Have the function ArrayChallenge(arr) take the array of numbers stored in arr which will
+Have the function max_profit(arr) take the array of numbers stored in arr which will
 contain integers that represent the amount in dollars that a single stock is worth.
 And return the max_profit that could have been made by buying stock on day x
 and selling stock on day y such that y>x.
@@ -36,4 +36,3 @@ if __name__ == "__main__":
     arr = [44, 30, 24, 32, 35, 30, 40, 38, 15]
     arr1 = [10, 9, 8, 1]
     print(max_profit(arr1))
-    
