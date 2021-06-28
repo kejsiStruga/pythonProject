@@ -26,10 +26,14 @@ def max_profit(a):
             min_el = a[i]
         elif a[i] - min_el > max_diff:
             max_diff = a[i] - min_el
+
+    if max_diff == 0:
+        return -1
     return max_diff
 
 
 if __name__ == "__main__":
     arr = [44, 30, 24, 32, 35, 30, 40, 38, 15]
-    arr1 = [10, 9, 8, 20]
+    arr1 = [10, 9, 8, 1]
     print(max_profit(arr1))
+    
