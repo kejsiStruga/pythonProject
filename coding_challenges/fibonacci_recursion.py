@@ -1,3 +1,8 @@
+"""
+O(2^n) big-o complexity
+"""
+
+
 def fib(n):
     # base case: f(0) = 0 and f(1) = 1
     if n <= 1:
