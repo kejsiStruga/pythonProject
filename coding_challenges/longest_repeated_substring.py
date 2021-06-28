@@ -64,4 +64,4 @@ def longest_repeated_substring(str_param):
 
 if __name__ == '__main__':
     str1 = "fdwaw4helloworldvcdv1c3xcv3xcz1sda21f2sd1ahelloworldgafgfa4564534321fadghelloworld"
-    print(longest_pattern(str1))
+    print(longest_repeated_substring(str1))
