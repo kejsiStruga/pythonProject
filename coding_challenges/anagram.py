@@ -16,7 +16,7 @@ def is_anagram_optimized(s1, s2):
     s2 = s2.replace(" ", "").lower()
 
     """
-    In the second, optimized approach, we make use of a dictionary
+    In the second, optimized approach ( O(n) ), we make use of a dictionary
     or hash table, so we are going to keep track of letters we encounter
     and make sure that once we see a letter on s1 we also have it on s2
     """
