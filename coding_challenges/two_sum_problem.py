@@ -38,8 +38,6 @@ def two_sum_nrs(arr, target):
         else:
             d[target - arr[i]] = i
 
-    return d
-
 
 if __name__ == '__main__':
     a = [1, 3, 11, 2, 7]
