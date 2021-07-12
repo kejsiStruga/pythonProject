@@ -44,6 +44,7 @@ class Graph(object):
         for key in sorted(list(self.vertices.keys())):
             print(key, ": " + str(self.vertices[key].neighbors))
 
+
 # graph = {
 #     'a': {'b': 10, 'c': 3},
 #     'b': {'c': 1, 'd': 2},
@@ -77,6 +78,5 @@ if __name__ == '__main__':
     g.add_edge(c, e, 2)
     g.add_edge(d, e, 7)
     g.add_edge(e, d, 9)
-
 
     g.print_graph()

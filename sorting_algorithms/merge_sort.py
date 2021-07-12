@@ -10,7 +10,6 @@ import numpy as np
 def merge(left, right, arr):
     len_left = len(left)
     len_right = len(right)
-    len_arr = len(arr)
     i = j = k = 0
 
     while i < len_left and j < len_right:
