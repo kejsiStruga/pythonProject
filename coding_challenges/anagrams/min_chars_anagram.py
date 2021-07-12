@@ -42,7 +42,6 @@ def min_chars_to_anagram(s):
             si = str1_dict.get(i, 0) - str2_dict.get(i, 0)
             if si > 0:
                 counter += si
-
         return counter
 
 
