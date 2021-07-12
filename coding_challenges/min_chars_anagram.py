@@ -12,84 +12,50 @@ hich are anagrams. Two changes were necessary.
 """
 
 
-def anagram(s):
+def min_chars_to_anagram(s):
     if len(s) <= 1:
         return -1
     elif len(s) == 1 and s[0] != s[1]:
         return 1
     else:
-        str1 = s[0:len(s)//2]
-        str2 = s[len(s)//2:len(s)]
+        str1 = s[0:len(s) // 2]
+        str2 = s[len(s) // 2:len(s)]
 
-        s1 = sorted(str1)
-        s2 = sorted(str2)
+        str1_dict = {}
+        str2_dict = {}
 
-        if len(str1) != len(str2):
-            return -1
+        for i in str1:
+            if i in str1_dict:
+                str1_dict[i] += 1
+            else:
+                str1_dict[i] = 1
 
-        counter = len(str1)
+        for i in str2:
+            if i in str2_dict:
+                str2_dict[i] += 1
+            else:
+                str2_dict[i] = 1
 
-        print(type(str1))
-        print(type(s1))
+        counter = 0
 
-        for i in range(len(s1)):
-            if s1[i] == s2[i]:
-                counter -= 1
+        for i in str1_dict:
+            si = str1_dict.get(i, 0) - str2_dict.get(i, 0)
+            if si > 0:
+                counter += si
 
         return counter
 
 
 if __name__ == '__main__':
     for i in ['aaabbb', 'ab', 'abc', 'mnop', 'xyyx', 'xaxbbbxx']:
-        print(anagram(i))
+        print(min_chars_to_anagram(i))
 
     input2 = ['fdhlvosfpafhalll']
 
+    print("\n")
+
     for i in input2:
-        print(anagram(i))
+        print(min_chars_to_anagram(i))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    for i in input2:
+        print(min_chars_to_anagram(i))
