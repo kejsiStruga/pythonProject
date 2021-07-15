@@ -15,8 +15,8 @@ def stringConstruction(s):
         for i in range(len(s) // 2):
             p += s[i]
             cost += 1
-        if p == s[len(s)//2:len(s)]:
-            p += s[len(s)//2:len(s)]
+        if p == s[len(s) // 2:len(s)]:
+            p += s[len(s) // 2:len(s)]
         else:
             for i in range((len(s) // 2), len(s)):
                 p += s[i]
@@ -25,49 +25,15 @@ def stringConstruction(s):
         for i in range(len(s) // 2):
             p += s[i]
             cost += 1
-        if p == s[len(s)//2+1:len(s)]:
-            p += s[len(s)//2:len(s)]
+        if p == s[len(s) // 2 + 1:len(s)]:
+            p += s[len(s) // 2:len(s)]
         else:
             for i in range((len(s) // 2), len(s)):
                 p += s[i]
                 cost += 1
-
 
     return cost
 
 
 if __name__ == '__main__':
     print(stringConstruction("abcd"))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
