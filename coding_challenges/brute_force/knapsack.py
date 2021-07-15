@@ -2,6 +2,18 @@
 arr = [1, 2, 3]
 power_set(arr) = [[], [1], [2], [3], [1,2], [1,3], [2,3], [1,2,3]]
 2^n elements in the power set of a set of n elements
+
+
+KnapSack -> You have a knapsack to carry products for selling. It holds up to a
+certain weight, not enough to carry all your products - you must choose which one
+to carry. Knowing the weight and value of each product, which choice of
+products gives you the highest value?
+
+We facilitate the idea of power sets because in that way we get all possible pairs.
+A brute force approach simply checks these selections in a for loop. Making sure
+we don't surpass the max_weight capacity and maximize the value by choosing the
+set which has highest value.
+
 """
 
 
